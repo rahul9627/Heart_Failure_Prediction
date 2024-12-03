@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Failure Prediction</title>
+</head>
+<body>
+    <h1>Heart Failure Prediction</h1>
+    <form action="/predict" method="post">
+        <label for="height">Height (cm):</label>
+        <input type="text" name="height" required><br>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="text" name="weight" required><br>
+
+        <label for="ap_hi">Systolic Blood Pressure:</label>
+        <input type="text" name="ap_hi" required><br>
+
+        <label for="ap_lo">Diastolic Blood Pressure:</label>
+        <input type="text" name="ap_lo" required><br>
+
+        <label for="cholesterol">Cholesterol (1-Normal, 2-Above Normal, 3-Well Above Normal):</label>
+        <input type="text" name="cholesterol" required><br>
+
+        <label for="gluc">Glucose (1-Normal, 2-Above Normal, 3-Well Above Normal):</label>
+        <input type="text" name="gluc" required><br>
+
+        <label for="smoke">Smoker (0-No, 1-Yes):</label>
+        <input type="text" name="smoke" required><br>
+
+        <label for="alco">Alcohol Consumption (0-No, 1-Yes):</label>
+        <input type="text" name="alco" required><br>
+
+        <label for="active">Physically Active (0-No, 1-Yes):</label>
+        <input type="text" name="active" required><br>
+
+        <label for="ageYears">Age (Years):</label>
+        <input type="text" name="ageYears" required><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+    <h2>Prediction Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
